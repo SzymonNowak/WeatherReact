@@ -8,66 +8,75 @@ const Result = (props) => {
         const sunsetTime = new Date(sunset * 1000).toLocaleTimeString();
         content = (
             <div>
+                <div className="row py-5">
+                        <div className="col-md-4 ">
+                            <div className="card ">
+                            <div className="card-body">
+                                <p className="card-text text-center "><span><i className="fas fa-city "></i>  City:</span></p>
+                            </div>
+                            <div className="card-footer ">
+                                <p className="text-center"> {city}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <p className="card-text text-center"><span><i className="fas fa-cloud-moon"></i> Sunset Time:</span></p>
+                            </div>
+                            <div className="card-footer">
+                                <p className="text-center">  {sunsetTime} </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="col-md-4">
+
+                        <div className="card">
+                            <div className="card-body">
+                                <p className="card-text text-center"><span><i className="fas fa-cloud-sun"></i>  Sunrise Time:</span></p>
+                            </div>
+                            <div className="card-footer">
+                                <p className="text-center">  {sunriseTime} </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="card">
-                            <div className="card-body">
-                                <p className="card-text"><span><i className="fas fa-city"></i></span></p>
-                            </div>
-                            <div className="card-footer">
-                               {city}
-                            </div>
-                        </div>
-
 
                         <div className="card">
                             <div className="card-body">
-                                <p className="card-text"><span><i className="fas fa-cloud-moon"></i></span></p>
+                                <p className="card-text text-center"><span><i className="fas fa-thermometer-half"></i>  Temperature:</span></p>
                             </div>
                             <div className="card-footer">
-                                {sunsetTime}
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div className="col-md-4">
-                        <div className="card">
-                            <div className="card-body">
-                                <p className="card-text"><span><i className="fas fa-cloud-sun"></i></span></p>
-                            </div>
-                            <div className="card-footer">
-                                {sunriseTime}
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-body">
-                                <p className="card-text"><span><i className="fas fa-thermometer-half"></i></span></p>
-                            </div>
-                            <div className="card-footer">
-                               {temp}
+                                <p className="text-center">   {temp} </p>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4">
+
                         <div className="card">
                             <div className="card-body">
-                                <p className="card-text"><span><i className="fas fa-wind"></i></span></p>
+                                <p className="card-text text-center"><span><i className="fas fa-wind"></i></span>  Wind Speed:</p>
                             </div>
                             <div className="card-footer">
-                                {wind}
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-body">
-                                <p className="card-text"><span><i className="fas fa-water"></i>Woda</span></p>
-                            </div>
-                            <div className="card-footer">
-                                {pressure}
+                                <p className="text-center">  {wind} </p>
                             </div>
                         </div>
                     </div>
+                    <div className="col-md-4">
 
+                        <div className="card">
+                            <div className="card-body">
+                                <p className="card-text text-center"><span><i className="fas fa-water"></i>  Rressure:</span></p>
+                            </div>
+                            <div className="card-footer">
+                                <p className="text-center">  {pressure} </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

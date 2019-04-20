@@ -61,7 +61,7 @@ class App extends Component {
     return (
 
       <div className="container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center py-5" >
               <Form value={this.state.value}
                     change={this.handleInputChange}
                     submit={this.handleCitySubmit}
