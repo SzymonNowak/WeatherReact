@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-{/*<p><span><i className="fas fa-building"></i></span>{city}</p>*/}
+import './Reasult.css';
+
+
 const Result = (props) => {
     const {err, city, sunrise, sunset, temp, pressure , wind} = props.weather;
     let content = null;
@@ -14,8 +16,8 @@ const Result = (props) => {
                             <div className="card-body">
                                 <p className="card-text text-center "><span><i className="fas fa-city "></i>  City:</span></p>
                             </div>
-                            <div className="card-footer ">
-                                <p className="text-center"> {city}</p>
+                            <div className="card-footer bg-dark ">
+                                <p className="text-center mt-2 "> {city}</p>
                             </div>
                         </div>
                     </div>
@@ -24,8 +26,8 @@ const Result = (props) => {
                             <div className="card-body">
                                 <p className="card-text text-center"><span><i className="fas fa-cloud-moon"></i> Sunset Time:</span></p>
                             </div>
-                            <div className="card-footer">
-                                <p className="text-center">  {sunsetTime} </p>
+                            <div className="card-footer bg-dark">
+                                <p className="text-center mt-2">  {sunsetTime} </p>
                             </div>
                         </div>
 
@@ -36,22 +38,22 @@ const Result = (props) => {
                             <div className="card-body">
                                 <p className="card-text text-center"><span><i className="fas fa-cloud-sun"></i>  Sunrise Time:</span></p>
                             </div>
-                            <div className="card-footer">
-                                <p className="text-center">  {sunriseTime} </p>
+                            <div className="card-footer bg-dark">
+                                <p className="text-center mt-2">  {sunriseTime} </p>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <div className="row">
+                <div className="row py-3">
                     <div className="col-md-4">
 
                         <div className="card">
                             <div className="card-body">
                                 <p className="card-text text-center"><span><i className="fas fa-thermometer-half"></i>  Temperature:</span></p>
                             </div>
-                            <div className="card-footer">
-                                <p className="text-center">   {temp} </p>
+                            <div className="card-footer bg-dark">
+                                <p className="text-center mt-2">   {temp} </p>
                             </div>
                         </div>
                     </div>
@@ -61,8 +63,8 @@ const Result = (props) => {
                             <div className="card-body">
                                 <p className="card-text text-center"><span><i className="fas fa-wind"></i></span>  Wind Speed:</p>
                             </div>
-                            <div className="card-footer">
-                                <p className="text-center">  {wind} </p>
+                            <div className="card-footer bg-dark">
+                                <p className="text-center mt-2">  {wind} </p>
                             </div>
                         </div>
                     </div>
@@ -70,29 +72,24 @@ const Result = (props) => {
 
                         <div className="card">
                             <div className="card-body">
-                                <p className="card-text text-center"><span><i className="fas fa-water"></i>  Rressure:</span></p>
+                                <p className="card-text text-center"><span><i className="fas fa-water"></i>  Pressure:</span></p>
                             </div>
-                            <div className="card-footer">
-                                <p className="text-center">  {pressure} </p>
+                            <div className="card-footer bg-dark">
+                                <p className="text-center mt-2">  {pressure} </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
             )
 
     }
-
     return(
-
-
             <>
                 {err? `Miasto niedostepne: ${city}` : content }
             </>
 
     )
 }
-
 export default Result;

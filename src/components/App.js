@@ -3,10 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "./Form";
 import './App.css';
 import Result from "./Result";
-
 const KEY = "2942808c05777907ea909408c8ec4cef";
-const style="width: 18erm;";
-
 class App extends Component {
   state = {
     value: "",
@@ -56,7 +53,6 @@ class App extends Component {
         )
   }
 
-
   render() {
     return (
 
@@ -67,16 +63,11 @@ class App extends Component {
                     submit={this.handleCitySubmit}
               />
           </div>
-
               <Result
                   weather={this.state}
               />
-
-
+          <p className="text-center mt-2"> Created by: <a href="https://github.com/SzymonNowak/WeatherReact">Szymon Nowak </a> </p>
       </div>
-
-
-
     );
   }
 }
