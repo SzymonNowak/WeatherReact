@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "./Form";
 import './App.css';
 import Result from "./Result";
+
 const KEY = "2942808c05777907ea909408c8ec4cef";
+const style="width: 18erm;";
 
 class App extends Component {
   state = {
@@ -22,6 +25,7 @@ class App extends Component {
       value: e.target.value
     })
   }
+
   handleCitySubmit = e => {
     e.preventDefault();
     const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&APPID=${KEY}&units=metric`;
@@ -46,7 +50,7 @@ class App extends Component {
         }))
         })
         .catch(error => this.setState({
-            err: true,
+            err: !false,
             city: this.state.value
             })
         )
@@ -55,15 +59,24 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Form value={this.state.value}
-              change={this.handleInputChange}
-              submit={this.handleCitySubmit}
-        />
-        <Result
-            weather={this.state}
-        />
+
+      <div className="container">
+          <div className="row justify-content-center">
+              <Form value={this.state.value}
+                    change={this.handleInputChange}
+                    submit={this.handleCitySubmit}
+              />
+          </div>
+
+              <Result
+                  weather={this.state}
+              />
+
+
       </div>
+
+
+
     );
   }
 }
