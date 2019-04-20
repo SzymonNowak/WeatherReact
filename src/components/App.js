@@ -33,9 +33,21 @@ class App extends Component {
           } throw Error("nie udalo sie")
         })
         .then(response => response.json())
-        .then( data => console.log(data))
+        .then( data => {
+            const time = new Date().toLocaleString()
+        this.setState(prevState => ({
+          date: time,
+          city: prevState.value,
+          sunrise: data.sys.sunrise,
+          sunset: data.sys.sunset,
+          temp: data.main.temp,
+          pressure: data.main.pressure,
+          wind: data.wind.speed,
+        }))
+        })
         .catch(error => this.setState({
-            err: true
+            err: true,
+            city: this.state.value
             })
         )
   }
@@ -48,7 +60,9 @@ class App extends Component {
               change={this.handleInputChange}
               submit={this.handleCitySubmit}
         />
-        <Result error={this.state.err}/>
+        <Result
+            weather={this.state}
+        />
       </div>
     );
   }
