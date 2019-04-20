@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Form = (props) => {
     return(
-        <form>
+        <form onSubmit={props.submit}>
             <input type="text"
                    value={props.value}
                    placeholder="Wpisz miasto"
